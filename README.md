@@ -47,7 +47,7 @@ Serving on http://localhost:4200/
 ```
 ember generate route scientists
 ```
-
+<br/>
 
 - app/templates/scientists.hbs
 ```html
