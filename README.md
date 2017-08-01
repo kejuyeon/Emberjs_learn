@@ -48,7 +48,41 @@ Serving on http://localhost:4200/
 ember generate route scientists
 ```
 
-app/templates/scientists.hbs
+
+- app/templates/scientists.hbs
 ```html
 <h2>List of Scientists</h2>
 ```
+
+브라우저에서 열기 `http://localhost:4200/scientists`
+
+<br/>
+
+- app/routes/scientists.js
+``` javascript
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model() {
+    return ['Marie Curie', 'Mae Jemison', 'Albert Hofmann'];
+  }
+});
+```
+
+<br/>
+
+- app/templates/scientists.hbs
+
+``` html
+<h2>List of Scientists</h2>
+
+<ul>
+  {{#each model as |scientist|}}
+    <li>{{scientist}}</li>
+  {{/each}}
+</ul>
+```
+
+<br/>
+
+변경사항 확인
