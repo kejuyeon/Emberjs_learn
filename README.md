@@ -30,4 +30,7 @@ ember server
 Livereload server on http://localhost:49152
 Serving on http://localhost:4200/
 ```
+
+(To stop the server at any time, type Ctrl-C in your terminal.)
+
 브라우저에서 열기 `http://localhost:4200/`
