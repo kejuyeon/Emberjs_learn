@@ -101,3 +101,15 @@ export default Ember.Route.extend({
 });
 
 ```
+
+<br/>
+<br/>
+
+### Installing Addons Edit Page
+
+
+The vendor directory in Ember is a special directory where you can include content that gets compiled into your application. When Ember CLI builds our app from our source code, it copies ember-tutorial.css into a file called vendor.css.
+
+```
+ember install ember-cli-tutorial-style
+```
