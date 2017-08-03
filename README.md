@@ -86,3 +86,18 @@ export default Ember.Route.extend({
 <br/>
 
 변경사항 확인
+
+<br/>
+
+index 설정
+
+```
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  beforeModel() {
+    this.replaceWith('rentals');
+  }
+});
+
+```
