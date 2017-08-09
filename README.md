@@ -87,20 +87,6 @@ export default Ember.Route.extend({
 
 변경사항 확인
 
-<br/>
-
-index 설정
-
-```hbs
-import Ember from 'ember';
-
-export default Ember.Route.extend({
-  beforeModel() {
-    this.replaceWith('scientists');
-  }
-});
-
-```
 
 <br/>
 <br/>
