@@ -279,4 +279,63 @@ index에 main 페이지를 연결 시킴
 </div>
 ```
 
+### model hook
+
+`app/routes/rentals.js`
+```
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model() {
+    return [
+      {id: '1',
+      title: 'title1',
+      writer: 'kero',
+      propertyType: 'comment',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+      content: '하하하핳',
+      description: '설명1'},
+      {id: '2',
+      title: 'title2',
+      writer: 'kero2',
+      propertyType: 'reply',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg',
+      content: '뭐야이이이이',
+      description: '설명2'}
+    ]
+  }
+});
+```
+
+
+`app/templates/main.hbs`
+```
+<div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>Welcome!</h2>
+  <p>Hello World</p>
+  {{#link-to 'about' class="button"}}
+    About
+  {{/link-to}}
+
+  {{#each model as |item|}}
+    <article class="listing">
+    <h3>{{item.title}}</h3>
+    <div class="detail owner">
+      <span>writer:</span> {{item.writer}}
+    </div>
+    <div class="detail type">
+      <span>Type:</span> {{item.propertyType}}
+    </div>
+    <div class="detail location">
+      <span>content:</span> {{item.content}}
+    </div>
+    <div class="detail bedrooms">
+      <span>description</span> {{item.description}}
+    </div>
+  </article>
+  {{/each}}
+</div>
+```
+
 
