@@ -227,5 +227,56 @@ ember generate route contact
 </div>
 ```
 
+### main 생성
+
+```
+ember g route main
+```
+
+
+### index 생성
+
+```
+ember g route index
+```
+
+`app/routes/index.js` 수정
+
+```javascript
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  beforeModel() {
+    this.replaceWith('main');
+  }
+});
+```
+index에 main 페이지를 연결 시킴 
+
+### navigation menu만들기 
+
+`app/templates/application.hbs`
+```html
+<div class="container">
+  <div class="menu">
+    {{#link-to 'index'}}
+      <h1>
+        <em>메인</em>
+      </h1>
+    {{/link-to}}
+    <div class="links">
+      {{#link-to 'about'}}
+        About
+      {{/link-to}}
+      {{#link-to 'contact'}}
+        연락처
+      {{/link-to}}
+    </div>
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>
+```
 
 
