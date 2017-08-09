@@ -281,7 +281,10 @@ index에 main 페이지를 연결 시킴
 
 ### model hook
 
-`app/routes/rentals.js`
+main.js에서 작성된 데이터를 main.hbs에서 사용
+`model()` 는 `model: function()`과 같음. 정의된 메소드.
+
+`app/routes/main.js`
 ```
 import Ember from 'ember';
 
@@ -317,7 +320,7 @@ export default Ember.Route.extend({
   {{#link-to 'about' class="button"}}
     About
   {{/link-to}}
-
+</div>
   {{#each model as |item|}}
     <article class="listing">
     <h3>{{item.title}}</h3>
@@ -335,7 +338,104 @@ export default Ember.Route.extend({
     </div>
   </article>
   {{/each}}
+```
+
+### addon 사용
+
+`https://emberobserver.com/`에서 다른 addon을 찾을 수 있음.
+ember-cli-tutorial-style 을 사용할꺼임.
+
+```
+ember install ember-cli-tutorial-style
+ember s
+```
+스타일 적용이 뙇
+변경하고자 하면 `vendor/ember-tutorial.css`에서 변경 가능
+
+
+### component 추가
+
+```
+ember g component listing
+```
+
+`app/templates/components/rental-listing.hbs`
+```
+<article class="listing">
+    <img src="{{item.image}}" alt="">
+    <h3>{{item.title}}</h3>
+    <div class="detail owner">
+      <span>writer:</span> {{item.writer}}
+    </div>
+    <div class="detail type">
+      <span>Type:</span> {{item.propertyType}}
+    </div>
+    <div class="detail location">
+      <span>content:</span> {{item.content}}
+    </div>
+    <div class="detail bedrooms">
+      <span>description</span> {{item.description}}
+    </div>
+  </article>
+  ```
+  
+  
+`app/templates/main.hbs`
+```
+<div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>Welcome!</h2>
+  <p>Hello World</p>
+  {{#link-to 'about' class="button"}}
+    About
+  {{/link-to}}
+
+  {{#each model as |items|}}
+  {{rental-listing items=items}}
+  {{/each}}
 </div>
 ```
 
 
+### image show hide action
+
+`app/templates/components/listing.hbs`
+
+```
+<article class="listing">
+ <!-- 수정 -->
+ <a {{action 'toggleImageSize'}} class="image {{if isWide "wide"}}">
+    <img src="{{item.image}}" alt="">
+    <small>View Larger</small>
+  </a>
+ <!-- 수정 -->
+  <h3>{{item.title}}</h3>
+  <div class="detail owner">
+    <span>writer:</span> {{item.writer}}
+  </div>
+  <div class="detail type">
+    <span>Type:</span> {{item.propertyType}}
+  </div>
+  <div class="detail location">
+    <span>content:</span> {{item.content}}
+  </div>
+  <div class="detail bedrooms">
+    <span>description</span> {{item.description}}
+  </div>
+</article>
+```
+
+
+`app/components/listing.js`
+```
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+  isWide: false,
+  actions: {
+    toggleImageSize() {
+      this.toggleProperty('isWide');
+    }
+  }
+});
+```
