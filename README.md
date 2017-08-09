@@ -59,7 +59,7 @@ ember generate route scientists
 <br/>
 
 - app/routes/scientists.js
-``` javascript
+```javascript
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -73,7 +73,7 @@ export default Ember.Route.extend({
 
 - app/templates/scientists.hbs
 
-``` html
+```html
 <h2>List of Scientists</h2>
 
 <ul>
@@ -91,7 +91,7 @@ export default Ember.Route.extend({
 
 index 설정
 
-```
+```hbs
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -113,3 +113,127 @@ The vendor directory in Ember is a special directory where you can include conte
 ```
 ember install ember-cli-tutorial-style
 ```
+
+
+
+<br/>
+<br/>
+
+## 예제
+
+```
+ember new super-rentals
+cd super-rentals
+ember server
+```
+서버 실행 후 확인
+`http://localhost:4200`
+
+`app/templates/application.hbs`
+
+```hbs
+{{outlet}}
+```
+
+<br/>
+
+### about page 생성
+
+```
+ember generate route about
+```
+or
+```
+ember g route about
+```
+
+<br/>
+
+`app/templates/about.hbs` 수정
+
+```html
+<div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>About Super Rentals</h2>
+  <p>
+    The Super Rentals website is a delightful project created to explore Ember.
+    By building a property rental site, we can simultaneously imagine traveling
+    AND building Ember applications.
+  </p>
+</div>
+```
+
+`http://localhost:4200/about` 확인
+
+
+
+### Contact 페이지 생성
+
+```
+ember generate route contact
+```
+
+`app/templates/contact.hbs` 수정
+
+```html
+<div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>Contact Us</h2>
+  <p>Super Rentals Representatives would love to help you<br>choose a destination or answer
+    any questions you may have.</p>
+  <p>
+    Super Rentals HQ
+    <address>
+      1212 Test Address Avenue<br>
+      Testington, OR 97233
+    </address>
+    <a href="tel:503.555.1212">+1 (503) 555-1212</a><br>
+    <a href="mailto:superrentalsrep@emberjs.com">superrentalsrep@emberjs.com</a>
+  </p>
+</div>
+```
+
+### link-to
+
+`app/templates/about.hbs` 수정
+```html
+<div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>About Super Rentals</h2>
+  <p>
+    The Super Rentals website is a delightful project created to explore Ember.
+    By building a property rental site, we can simultaneously imagine traveling
+    AND building Ember applications.
+  </p>
+  {{#link-to 'contact' class="button"}}
+    Contact Us
+  {{/link-to}}
+</div>
+```
+
+
+`app/templates/contact.hbs` 수정
+
+```html
+<div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>Contact Us</h2>
+  <p>Super Rentals Representatives would love to help you<br>choose a destination or answer
+    any questions you may have.</p>
+  <p>
+    Super Rentals HQ
+    <address>
+      1212 Test Address Avenue<br>
+      Testington, OR 97233
+    </address>
+    <a href="tel:503.555.1212">+1 (503) 555-1212</a><br>
+    <a href="mailto:superrentalsrep@emberjs.com">superrentalsrep@emberjs.com</a>
+  </p>
+  {{#link-to 'about' class="button"}}
+    About
+  {{/link-to}}
+</div>
+```
+
+
+
