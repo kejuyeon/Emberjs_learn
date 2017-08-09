@@ -122,8 +122,8 @@ ember install ember-cli-tutorial-style
 ## 예제
 
 ```
-ember new super-rentals
-cd super-rentals
+ember new test-app
+cd test-app
 ember server
 ```
 서버 실행 후 확인
@@ -154,11 +154,9 @@ ember g route about
 ```html
 <div class="jumbo">
   <div class="right tomster"></div>
-  <h2>About Super Rentals</h2>
+  <h2>타이틀</h2>
   <p>
-    The Super Rentals website is a delightful project created to explore Ember.
-    By building a property rental site, we can simultaneously imagine traveling
-    AND building Ember applications.
+    설명글을 써봅니다.
   </p>
 </div>
 ```
@@ -179,16 +177,14 @@ ember generate route contact
 <div class="jumbo">
   <div class="right tomster"></div>
   <h2>Contact Us</h2>
-  <p>Super Rentals Representatives would love to help you<br>choose a destination or answer
-    any questions you may have.</p>
+  <p>연락처하지마세영</p>
   <p>
-    Super Rentals HQ
+    하하하하하하하하하
     <address>
-      1212 Test Address Avenue<br>
-      Testington, OR 97233
+      마포구 동교동 197-42
     </address>
-    <a href="tel:503.555.1212">+1 (503) 555-1212</a><br>
-    <a href="mailto:superrentalsrep@emberjs.com">superrentalsrep@emberjs.com</a>
+    <a href="tel:02.333.1714">(02) 333-1714</a><br>
+    <a href="mailto:dev@cizion.com">dev@cizion.com</a>
   </p>
 </div>
 ```
@@ -199,11 +195,9 @@ ember generate route contact
 ```html
 <div class="jumbo">
   <div class="right tomster"></div>
-  <h2>About Super Rentals</h2>
+  <h2>타이틀</h2>
   <p>
-    The Super Rentals website is a delightful project created to explore Ember.
-    By building a property rental site, we can simultaneously imagine traveling
-    AND building Ember applications.
+    설명글을 써봅니다.
   </p>
   {{#link-to 'contact' class="button"}}
     Contact Us
@@ -218,16 +212,14 @@ ember generate route contact
 <div class="jumbo">
   <div class="right tomster"></div>
   <h2>Contact Us</h2>
-  <p>Super Rentals Representatives would love to help you<br>choose a destination or answer
-    any questions you may have.</p>
+  <p>연락처하지마세영</p>
   <p>
-    Super Rentals HQ
+    하하하하하하하하하
     <address>
-      1212 Test Address Avenue<br>
-      Testington, OR 97233
+      마포구 동교동 197-42
     </address>
-    <a href="tel:503.555.1212">+1 (503) 555-1212</a><br>
-    <a href="mailto:superrentalsrep@emberjs.com">superrentalsrep@emberjs.com</a>
+    <a href="tel:02.333.1714">(02) 333-1714</a><br>
+    <a href="mailto:dev@cizion.com">dev@cizion.com</a>
   </p>
   {{#link-to 'about' class="button"}}
     About
