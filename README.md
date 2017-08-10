@@ -336,6 +336,7 @@ ember install ember-cli-tutorial-style
 ember s
 ```
 스타일 적용이 뙇
+
 변경하고자 하면 `vendor/ember-tutorial.css`에서 변경 가능
 
 
